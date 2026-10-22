@@ -1,0 +1,30 @@
+{
+  "name": "solwatch",
+  "version": "1.0.0",
+  "description": "Watch Solana wallets in real time",
+  "main": "server/index.ts",
+  "scripts": {
+    "test": "node --import tsx --test test/*.test.ts",
+    "build": "vite build",
+    "start": "npm run build && tsx server/index.ts",
+    "dev:server": "tsx watch server/index.ts",
+    "dev:web": "vite",
+    "typecheck": "tsc --noEmit"
+  },
+  "author": "wellkyc",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "ws": "^8.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/ws": "^8.18.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5"
+  },
+  "engines": {
+    "node": ">=20.12"
+  }
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>solwatch</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23fafafa'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <span class="name">solwatch</span>
+      <div class="status" id="status">
+        <span class="dot"></span>
+        <span id="status-text">connecting...</span>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <form class="watch-form" id="watch-form" autocomplete="off">
+          <label for="address">Watch a wallet</label>
+          <div class="row">
+            <input id="address" placeholder="Solana address" spellcheck="false" required />
+            <button type="submit" class="btn">Watch</button>
+          </div>
+        </form>
+
+        <div class="section-title">
+          <span>Wallets</span>
+          <span id="wallet-count">0</span>
+        </div>
+        <ul class="wallets" id="wallets"></ul>
+        <p class="empty" id="wallets-empty">No wallets yet. Paste an address above.</p>
+      </aside>
+
+      <section class="feed-panel">
+        <div class="feed-header">
+          <div class="filters" id="filters">
+            <button class="chip active" data-filter="all">All</button>
+            <button class="chip" data-filter="swap">Swaps</button>
+            <button class="chip" data-filter="transfer">Transfers</button>
+            <button class="chip" data-filter="failed">Failed</button>
+          </div>
+          <div class="selection" id="selection" hidden>
+            <span id="selection-text"></span>
+            <button class="link" id="clear-selection">clear</button>
+          </div>
+        </div>
+        <ol class="feed" id="feed"></ol>
+        <p class="empty" id="feed-empty">Nothing yet.</p>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" hidden></div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
